@@ -16,11 +16,16 @@
             align-items: center;
             height: 350px;
             width: 350px;
+
         }
         .card{
             display: flex;
             justify-content: center;
             align-items: center;
+            top: auto;
+            left: auto;
+
+            background: black;
         }
 
         
@@ -31,9 +36,10 @@
     <div class="card"> 
         <div class="mdc-form-field mdc-card">
             <form action="/upload" method="post" enctype="multipart/form-data">
-                <input type="file" name="avatar" />
+                <input type="file" name="image" />
+                <input type="submit" value="upload">
               </form>
-            <label for="my-checkbox">upload some shit in here</label>
+            <label >upload some shit in here</label>
         </div>
     </div>
 </body>
