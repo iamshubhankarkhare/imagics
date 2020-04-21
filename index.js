@@ -14,6 +14,7 @@ app.set('view engine', 'ejs');
 app.use(bodyParser.urlencoded({ extended: true }))
 app.use(bodyParser.json())
 app.use('/uploads', express.static(path.join(__dirname + '/uploads')));
+app.use(express.static('./views'));
 //routes
 app.get('/',(req,res)=>{
     res.render('home')
