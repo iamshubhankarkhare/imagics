@@ -10,15 +10,20 @@
 
 <body>
     <div class="card">
-        <div class="row-1">
-            <div class="file-upload">hgjghgh</div>
-            <div class="button upload">upload </div>
-        </div>
-        <div class="row-2">
-            <%=(typeof(msg)=="undefined"?"":msg)%>
-        </div>
+        <form action="/upload" method="post" enctype="multipart/form-data">
+            <div class="row-1">
+
+                <div class="file-upload"><input type="file" name="image" /></div>
+                <div class="button upload"> <input type="submit" value="upload"> upload</div>
+
+
+            </div>
+            <div class="row-2">
+                <%=(typeof(msg)=="undefined"?"":msg)%>
+            </div>
+        </form>
         <div class="row-3">
-            <img src="../uploads/image-1587413450188.png" class="uploaded-img">
+            <img src="<%= typeof file != 'undefined' ? file : '' %>" class="uploaded-img">
             <div class="loader">fdfdfdfd</div>
         </div>
         <div class="row-4">
@@ -56,7 +61,7 @@
                 <input type="checkbox" id="monochrome" name="monochrome" value="monochrome" class="check-wrap">
                 <label for="monochrome"> Monochrome</label><br>
                 <input type="checkbox" id="rotate-right" name="rotate-right" value="rotate-right" class="check-wrap">
-                <label for="rotate-right">Rotate right</label><br>
+                <label for="rotate-right"> Rotate right</label><br>
                 <input type="checkbox" id="rotate-left" name="rotate-left" value="rotate-left" class="check-wrap">
                 <label for="rotate-left"> Rotate left</label><br><br>
             </div>
@@ -64,7 +69,7 @@
                 <input type="checkbox" id="sepia" name="sepia" value="sepia" class="check-wrap">
                 <label for="sepia"> Sepia</label><br>
                 <input type="checkbox" id="enhance" name="enhance" value="enhance" class="check-wrap">
-                <label for="enhance">Enhance</label><br>
+                <label for="enhance"> Enhance</label><br>
                 <input type="checkbox" id="equalize" name="equalize" value="equalize" class="check-wrap">
                 <label for="equalize"> Equalize</label><br><br>
             </div>

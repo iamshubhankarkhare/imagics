@@ -1,6 +1,8 @@
     body,
     .card {
         background-color: #d2cee9;
+        padding: 0%;
+        margin: 0px;
     }
     
     body {
@@ -50,7 +52,6 @@
     .row-1 {
         padding: 5% 5% 5%;
         display: flex;
-        /* background: red; */
     }
     
     .file-upload {
@@ -59,17 +60,17 @@
     }
     
     .upload {
-        background: red;
         flex: 1;
     }
+    /* input[type=submit] {
+        display: none;
+    } */
     
     .row-2 {
-        background: orange;
         padding: 2% 2%;
     }
     
     .row-3 {
-        background: green;
         padding: 2% 2%;
         height: 40%;
         display: flex;
@@ -82,7 +83,6 @@
     }
     
     .loader {
-        background: blue;
         padding: 2%;
     }
     /* row4 */
@@ -108,7 +108,7 @@
         margin-bottom: 30px;
         border-radius: 10px;
         background: #d2cee9;
-        box-shadow: inset 7px 7px 14px #b3afc6, inset -7px -7px 14px #f2edff;
+        box-shadow: 7px 7px 14px #b3afc6, -7px -7px 14px #f2edff, inset 7px 7px 14px #b3afc6, inset -7px -7px 14px #f2edff;
         flex: auto;
         height: 45%;
         width: 55%;
@@ -127,7 +127,7 @@
         margin-bottom: 30px;
         border-radius: 25px;
         background: #d2cee9;
-        box-shadow: inset 7px 7px 14px #b3afc6, inset -7px -7px 14px #f2edff;
+        box-shadow: 7px 7px 14px #b3afc6, -7px -7px 14px #f2edff, inset 7px 7px 14px #b3afc6, inset -7px -7px 14px #f2edff;
         flex: 1;
         padding-left: 3%;
         width: 200%;
@@ -141,6 +141,9 @@
         align-items: center;
         flex-wrap: wrap;
         justify-content: space-around;
+        font-family: Helvetica;
+        letter-spacing: 1px;
+        font-weight: 200;
     }
     
     .check-wrap {
@@ -157,10 +160,9 @@
         display: inline-block;
         width: 0.5em;
         height: 0.5em;
-        padding-left: 0.2em;
+        padding-left: 0.3em;
         padding-bottom: 0.3em;
-        color: transparent;
-        box-shadow: inset 7px 7px 14px #aca8b5, inset -7px -7px 14px #f2edff;
+        box-shadow: 7px 7px 14px #aca8b5, -7px -7px 14px #f2edff, inset 7px 7px 14px #b3afc6, inset -7px -7px 14px #f2edff;
         transition: .2s;
     }
     
