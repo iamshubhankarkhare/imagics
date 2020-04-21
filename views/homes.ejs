@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://unpkg.com/material-components-web@v4.0.0/dist/material-components-web.min.css" rel="stylesheet">
+    <script src="https://unpkg.com/material-components-web@v4.0.0/dist/material-components-web.min.js"></script>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+    <title>imagics</title>
+    <style>
+        .mdc-card {
+            position: relative;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 350px;
+            width: 350px;
+
+        }
+
+        .card {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            top: auto;
+            left: auto;
+
+            background: black;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="card">
+        <div class="mdc-form-field mdc-card">
+            <form action="/upload" method="post" enctype="multipart/form-data">
+                <input type="file" name="image" />
+                <input type="submit" value="upload">
+                <%=(typeof(msg)=="undefined"?"":msg)%>
+            </form>
+            <label>upload some shit in here</label>
+            <img src="<%= typeof file != 'undefined' ? file : '' %>" class="responsive-img">
+        </div>
+    </div>
+
+
+    <script src="https://code.jquery.com/jquery-3.2.1.min.js"
+        integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4=" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.100.2/js/materialize.min.js"></script>
+</body>
+
+</html>

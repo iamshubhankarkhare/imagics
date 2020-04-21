@@ -29,13 +29,49 @@ const storage = multer.diskStorage({
     }
   })
    
-  var upload = multer({ storage: storage })
-  app.post('/upload', upload.single('image'), function (req, res, next) {
-    // req.file is the `avatar` file
-    // req.body will hold the text fields, if there were any
-    console.log("badhiya")
-    res.send("yess boy")
-  })
+  const upload = multer({
+    storage: storage,
+    fileFilter: function(req, file, cb){
+      checkFileType(file, cb);
+    }
+  }).single('image');
+  
+  // Check File Type
+  function checkFileType(file, cb){
+    // Allowed ext
+    const filetypes = /jpeg|jpg|png|gif/;
+    // Check ext
+    const extname = filetypes.test(path.extname(file.originalname).toLowerCase());
+    // Check mime
+    const mimetype = filetypes.test(file.mimetype);
+  
+    if(mimetype && extname){
+      return cb(null,true);
+    } else {
+      cb('Error: Images Only!');
+    }
+  }
+  //route to upload 
+  app.post('/upload', (req, res) => {
+    upload(req, res, (err) => {
+      if(err){
+        res.render('home', {
+          msg: err
+        });
+      } else {
+        if(req.file == undefined){
+          res.render('home', {
+            msg: 'Error: No File Selected!'
+          });
+        } else {
+          res.render('home', {
+            msg: 'File Uploaded!',
+            file: `uploads/${req.file.filename}`
+          });
+        }
+      }
+    });
+  });
 
 //listening here
 var port = process.env.port || 3000;
